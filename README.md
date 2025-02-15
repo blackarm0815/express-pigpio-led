@@ -37,7 +37,7 @@ start a tmux session
 > tmux new -s api
 
 start the node api in tmux
-> node api.js
+> sudo node api.js
 
 detach the tmux session (ctrl-b then d)
 
@@ -49,4 +49,4 @@ reattach the tmux session
 
 put the raspberry ip address in a browser followed
 
-interact with the html elements and watch the tmux output
+move the slider on the webpage and the led should change
