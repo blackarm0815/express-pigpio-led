@@ -1,6 +1,3 @@
-
-
-
 install stuff
 > sudo apt install -y tmux git nginx nodejs npm
 
@@ -12,7 +9,7 @@ npm - node package manager for handling dependencies
 
 pull this repo
 > git clone https://github.com/blackarm0815/express-pigpio-led.git
-> cd simple_node_api
+> cd express-pigpio-led
 
 install node dependencies
 > npm install
