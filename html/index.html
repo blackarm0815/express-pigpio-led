@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    #blink {
+      font-size: 200%;
+    }
+    #zoom { 
+      zoom: 4.2;
+    }
+    #output {
+      font-size: 300%;
+    }
+  </style>
+  <body>
+    <div id = "zoom">
+      <input type="range" id="slider" value = "0" min="0" max="255" />
+    </div>
+    <br/>
+    <br/>
+    <output id = "output"></output>
+    <script>
+
+// update this
+const serverIpAddress = '192.168.1.84';
+
+const changRange0001 = () => {
+  const slider = document.getElementById('slider');
+  if (slider !== null) {
+    const url = `http://${serverIpAddress}:8000/?slider=${slider.value}`;
+    console.log(url);
+    fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+    })
+    .catch(console.error);
+  }
+};
+
+const main = () => {
+  document.getElementById('slider').addEventListener('input', changRange0001);
+};
+
+main();
+
+    </script>
+  </body>
+</html>
