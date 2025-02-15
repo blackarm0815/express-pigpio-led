@@ -1,4 +1,5 @@
-install stuff
+##install stuff
+
 > sudo apt install -y tmux git nginx nodejs npm
 
 tmux - runs the api even after ssh disconnects
@@ -12,15 +13,15 @@ nodejs - runs javascript on the server
 npm - node package manager for handling dependencies
 
 
-pull this repo
+##pull this repo
 > git clone https://github.com/blackarm0815/express-pigpio-led.git
 > cd express-pigpio-led
 
-install node dependencies
+##install node dependencies
 > npm install
 
 
-install pigpio
+##compile and install pigpio
 
 wget https://github.com/joan2937/pigpio/archive/master.zip
 
@@ -33,27 +34,25 @@ make
 sudo make install
 
 
-
-
-edit the index.html file with nano and update the ip address in serverIpAddress (ctrl x to exit)
+##edit the index.html file with nano and update the ip address in serverIpAddress (ctrl x to exit)
 > nano index.html
 
-put the web content into place
+##put the web content into place
 
 > sudo cp -r html/* /var/www/html
 
-start a tmux session
+##start a tmux session
 > tmux new -s api
 
-start the node api in tmux
+##start the node api in tmux as root
 > sudo node api.js
 
-detach the tmux session (ctrl-b then d)
+##detach the tmux session (ctrl-b then d)
 
-list running tmux sessions
+##list running tmux sessions
 > tmux ls
 
-reattach the tmux session
+##reattach the tmux session
 > tmux attach -t api
 
 put the raspberry ip address in a browser followed
