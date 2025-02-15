@@ -26,7 +26,7 @@
 // update this
 const serverIpAddress = '192.168.1.84';
 
-const changRange0001 = () => {
+const changeSlider = () => {
   const slider = document.getElementById('slider');
   if (slider !== null) {
     const url = `http://${serverIpAddress}:8000/?slider=${slider.value}`;
@@ -41,7 +41,7 @@ const changRange0001 = () => {
 };
 
 const main = () => {
-  document.getElementById('slider').addEventListener('input', changRange0001);
+  document.getElementById('slider').addEventListener('input', changeSlider);
 };
 
 main();
