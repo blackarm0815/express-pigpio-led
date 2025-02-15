@@ -20,7 +20,7 @@ const controls = (
     // extract the range value
     rangeValue = req.query['slider'];
     // set the led
-    led.pwmWrite(rangeValue);
+    led.pwmWrite(255 - rangeValue);
     // send back an object response
     response = {'sliderUpdated': rangeValue};
   }
