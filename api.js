@@ -1,7 +1,11 @@
-const express = require('express')
 const cors = require('cors')
+const Gpio = require('pigpio').Gpio;
+const express = require('express')
+
 const app = express()
 app.use(cors());
+
+const led = new Gpio(17, {mode: Gpio.OUTPUT});
 
 const controls = (
   req,
@@ -15,6 +19,8 @@ const controls = (
   if (Object.prototype.hasOwnProperty.call(req.query, 'slider')) {
     // extract the range value
     rangeValue = req.query['slider'];
+    // set the led
+    led.pwmWrite(rangeValue);
     // send back an object response
     response = {'sliderUpdated': rangeValue};
   }
