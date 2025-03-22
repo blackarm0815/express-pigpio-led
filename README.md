@@ -33,6 +33,8 @@ make
 
 sudo make install
 
+## start the pigpio deamon
+> sudo pigpiod
 
 ## edit the index.html file with nano and update the ip address in serverIpAddress (ctrl x to exit)
 > nano index.html
