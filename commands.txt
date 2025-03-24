@@ -1,6 +1,32 @@
-# change directory to the code folder on the laptop
-cd 
+#####################################
+## doing stuff on the raspberry pi ##
+#####################################
+
+# ssh to the raspberry pi
+ssh michael-pi@192.168.1.112
+
+# start the pigpio c library (it will run in the background)
+sudo pigpiod
+
+# go to the code directory on the raspberry pi
+cd /home/michael-pi/code
+
+# start the api (it will use the terminal for output while running)
+sudo node api.js
+
+# stop the api with ctrl c
+
+# exit the ssh session
+exit
 
 
-# copy api.js to the raspberry pi
-scp api.js michael-pi@192.168.1.112:/home/michael-pi/express-pigpio-led/api.js
+################################
+## doing stuff on the macbook ##
+################################
+
+# copy the api
+scp /home/user/code/express-pigpio-led/api.js michael-pi@192.168.1.112:/home/michael-pi/code
+
+# copy the webpage
+scp /home/user/code/express-pigpio-led/index.html index.html michael-pi@192.168.1.112:/var/www/html
+
