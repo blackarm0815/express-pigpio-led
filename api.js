@@ -7,28 +7,16 @@ app.use(cors());
 
 const led = new Gpio(17, {mode: Gpio.OUTPUT});
 
-const controls = (
-  req,
-) => {
+app.get('/pin17', (req, res) => {
   //
-  let rangeValue = 0;
+  let pwnValue = 0;
   let response = {};
   //
-  console.log(req.query);
-  // does the query object contain slider
-  if (Object.prototype.hasOwnProperty.call(req.query, 'slider')) {
-    // extract the range value
-    rangeValue = req.query['slider'];
-    // set the led
-    led.pwmWrite(255 - rangeValue);
-    // send back an object response
-    response = {'sliderUpdated': rangeValue};
+  if (Object.prototype.hasOwnProperty.call(req.query, 'pwm')) {
+    pwnValue = req.query['pwm'];
+    led.pwmWrite(255 - pwnValue);
+    response = {'pin17': pwnValue};
   }
-  return response;
-};
-
-app.get('/', (req, res) => {
-  const response = controls(req);
   res.json(response);
 });
 

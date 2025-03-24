@@ -1,0 +1,6 @@
+# change directory to the code folder on the laptop
+cd 
+
+
+# copy api.js to the raspberry pi
+scp api.js michael-pi@192.168.1.112:/home/michael-pi/express-pigpio-led/api.js
