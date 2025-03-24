@@ -20,6 +20,7 @@ app.get('/pin17', (req, res) => {
     pin17.pwmWrite(255 - pwmValue);
     response = {'pin17': pwmValue};
   }
+  console.log(response);
   res.json(response);
 });
 
